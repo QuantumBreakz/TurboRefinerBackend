@@ -165,7 +165,7 @@ premailer==3.10.0
 prettytable==3.16.0
 propcache==0.3.2
 proto-plus==1.26.1
-protobuf==4.25.3
+protobuf==5.29.5
 psutil==6.1.0
 py-cpuinfo==9.0.0
 pyairtable==3.2.0
