@@ -331,12 +331,15 @@ from backend.core.database import list_jobs as db_list_jobs
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Startup: eager init pipeline to avoid lazy-load lock hang
-    logger.info("Initializing pipeline at startup...")
-    try:
-        get_pipeline()
-        logger.info("Pipeline initialized successfully")
-    except Exception as e:
-        logger.error(f"Pipeline init error: {e}")
+    if os.getenv("LIGHTWEIGHT_MODE", "").strip() == "1":
+        logger.info("LIGHTWEIGHT_MODE=1: Skipping pipeline initialization at startup")
+    else:
+        logger.info("Initializing pipeline at startup...")
+        try:
+            get_pipeline()
+            logger.info("Pipeline initialized successfully")
+        except Exception as e:
+            logger.error(f"Pipeline init error: {e}")
     # Startup: optionally launch periodic cleanup in background
     cleanup_task = None
     if os.getenv("DISABLE_CLEANUP", "").strip() != "1":
@@ -357,6 +360,11 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="Turbo Alan Refiner API", version="3.0.0", lifespan=lifespan)
 # Global flag to track database status
 database_initialized = False
+
+# Root route (optional) for uptime checks
+@app.get("/")
+async def root():
+    return {"status": "ok", "service": "Turbo Alan Refiner API"}
 
 # Global exception handlers for standardized errors
 @app.exception_handler(APIError)

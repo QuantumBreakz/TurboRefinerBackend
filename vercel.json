@@ -1,6 +1,10 @@
 {
   "builds": [{ "src": "api/index.py", "use": "@vercel/python" }],
   "installCommand": "pip install --no-cache-dir -r requirements-vercel.txt",
+  "env": {
+    "LIGHTWEIGHT_MODE": "1",
+    "DISABLE_CLEANUP": "1"
+  },
   "routes": [{ "src": "/(.*)", "dest": "/api/index.py" }]
 }
 
