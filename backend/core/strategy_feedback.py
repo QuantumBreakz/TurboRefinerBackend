@@ -30,7 +30,17 @@ class StrategyFeedbackManager:
     
     def __init__(self, storage_dir: str = "strategy_feedback"):
         self.storage_dir = Path(storage_dir)
-        self.storage_dir.mkdir(exist_ok=True)
+        # Ensure writable directory; fall back to /tmp on read-only FS (e.g., serverless)
+        try:
+            self.storage_dir.mkdir(parents=True, exist_ok=True)
+        except Exception:
+            tmp_base = Path(os.getenv("TMPDIR") or "/tmp") / "strategy_feedback"
+            try:
+                tmp_base.mkdir(parents=True, exist_ok=True)
+                self.storage_dir = tmp_base
+            except Exception:
+                # Last resort: keep in-memory only; disable persistence
+                self.storage_dir = None  # type: ignore
         
         # In-memory cache for active feedback
         self._feedback_cache: Dict[str, List[StrategyFeedback]] = {}
@@ -118,8 +128,10 @@ class StrategyFeedbackManager:
     
     def _persist_feedback(self, feedback: StrategyFeedback):
         """Persist feedback to disk."""
+        if not self.storage_dir:
+            return  # persistence disabled
         user_dir = self.storage_dir / feedback.user_id
-        user_dir.mkdir(exist_ok=True)
+        user_dir.mkdir(parents=True, exist_ok=True)
         
         feedback_file = user_dir / f"feedback_{feedback.feedback_id}.json"
         
@@ -129,6 +141,9 @@ class StrategyFeedbackManager:
     
     def _load_user_feedback(self, user_id: str):
         """Load user feedback from disk."""
+        if not self.storage_dir:
+            self._feedback_cache[user_id] = []
+            return
         user_dir = self.storage_dir / user_id
         
         if not user_dir.exists():
@@ -156,6 +171,8 @@ class StrategyFeedbackManager:
         if user_id in self._feedback_cache:
             del self._feedback_cache[user_id]
         
+        if not self.storage_dir:
+            return
         user_dir = self.storage_dir / user_id
         if user_dir.exists():
             for feedback_file in user_dir.glob("feedback_*.json"):
@@ -175,6 +192,8 @@ class StrategyFeedbackManager:
                     kept_feedback.append(feedback)
                 else:
                     # Remove old feedback file
+                    if not self.storage_dir:
+                        continue
                     user_dir = self.storage_dir / user_id
                     feedback_file = user_dir / f"feedback_{feedback.feedback_id}.json"
                     if feedback_file.exists():
