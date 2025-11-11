@@ -320,13 +320,36 @@ def handle_api_error(func):
     return func
 
 from backend.core.diff_utils import generate_diff, format_change_for_api, format_statistics_for_api
-from backend.conversation_refiner import ConversationalRefiner
 from backend.pipeline_service import RefinementPipeline  # ⭐ REAL PIPELINE
 from backend.language_model import OpenAIModel, analytics_store  # ⭐ REAL MODEL
 from backend.storage import LocalSink, DriveSink  # ⭐ REAL STORAGE
-from backend.Andy_speech import RefinementMemory, refine_with_feedback  # ⭐ REAL MEMORY + FEEDBACK
 from backend.prompt_schema import ADVANCED_COMMANDS  # ⭐ REAL SCHEMA
 from backend.core.database import list_jobs as db_list_jobs
+
+# Lazy/guarded imports for heavy modules to prevent serverless cold-start crashes
+ConversationalRefiner = None
+RefinementMemory = None
+refine_with_feedback = None
+if os.getenv("LIGHTWEIGHT_MODE", "").strip() != "1":
+    try:
+        from backend.conversation_refiner import ConversationalRefiner
+    except Exception as _e:
+        logger.warning(f"Conversation refiner unavailable: {_e}")
+    try:
+        from backend.Andy_speech import RefinementMemory, refine_with_feedback
+    except Exception as _e:
+        logger.warning(f"Refinement memory/feedback unavailable: {_e}")
+else:
+    # Provide lightweight fallbacks to satisfy type usage
+    class RefinementMemory:  # minimal stub
+        def __init__(self):
+            self.history = []
+        def log_pass(self, *args, **kwargs):
+            self.history.append({"args": args, "kwargs": kwargs})
+        def last_output(self):
+            return None
+        def last_score(self):
+            return None
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
