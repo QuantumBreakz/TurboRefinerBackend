@@ -371,6 +371,15 @@ async def lifespan(app: FastAPI):
             logger.info("Pipeline initialized successfully")
         except Exception as e:
             logger.error(f"Pipeline init error: {e}")
+    # Initialize in-memory database (wrapped to avoid import-time failures)
+    global database_initialized
+    try:
+        init_database()
+        database_initialized = True
+        logger.info("In-memory database initialized")
+    except Exception as e:
+        database_initialized = False
+        logger.error(f"Database initialization failed: {e}")
     # Startup: optionally launch periodic cleanup in background
     cleanup_task = None
     if os.getenv("DISABLE_CLEANUP", "").strip() != "1":
@@ -414,19 +423,7 @@ async def unhandled_error_handler(request: Request, exc: Exception):
     logger.error(f"Unhandled error: {exc}")
     return create_error_response("Internal server error", 500, "INTERNAL_ERROR")
 
-# Ensure DB tables exist
-try:
-    init_database()
-    database_initialized = True
-    print("✅ Database initialized successfully")
-except Exception as e:
-    print(f"❌ Database initialization failed: {e}")
-    database_initialized = False
-    # In production, you might want to exit here
-    # import sys; sys.exit(1)
-    # For now, log the error but continue
-    from backend.logger import log_exception
-    log_exception("DATABASE_INIT_FAILED", e)
+# Database init moved to lifespan to avoid import-time crashes in serverless
 
 # Rate limiting middleware
 @app.middleware("http")
