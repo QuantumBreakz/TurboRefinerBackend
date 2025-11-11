@@ -1,0 +1,13 @@
+{
+  "file_id": "test",
+  "pass_number": 0,
+  "content": "This is a test document for processing.\n",
+  "timestamp": 1761554368.132967,
+  "file_path": "/tmp/test.txt",
+  "metrics": null,
+  "metadata": {
+    "job_id": "b0df3a66-03e7-4e38-bf42-586bee736451",
+    "original": true,
+    "file_size": 40
+  }
+}

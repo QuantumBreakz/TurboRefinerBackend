@@ -1,0 +1,54 @@
+{
+  "file_id": "29cea22af82d",
+  "pass_number": 1,
+  "content": "",
+  "timestamp": 1762170759.463139,
+  "file_path": "./output/tmpd2n2ueup_pass1.pdf",
+  "metrics": {
+    "changePercent": 0.252111374726649,
+    "tensionPercent": 0.252111374726649,
+    "scannerRisk": 0.0,
+    "success": true,
+    "localPath": "./output/tmpd2n2ueup_pass1.pdf",
+    "docId": null,
+    "originalLength": 107785,
+    "finalLength": 107596,
+    "processingTime": 60876.77149900992
+  },
+  "metadata": {
+    "input_path": "/var/folders/1f/tr5wzfz93kz0z8jnp14m2k5r0000gn/T/tmpd2n2ueup.pdf",
+    "entropy_level": "medium",
+    "heuristics": {
+      "microstructure_control": true,
+      "macrostructure_analysis": true,
+      "anti_scanner_techniques": true,
+      "refiner_control": 2,
+      "entropy_management": 2,
+      "semantic_tone_tuning": 1,
+      "history_analysis": true,
+      "annotation_mode": false,
+      "humanize_academic": {
+        "enabled": true,
+        "intensity": "medium"
+      },
+      "formatting_safeguards": {
+        "enabled": true,
+        "mode": "strict"
+      },
+      "keywords": [],
+      "strategy_weights": {
+        "clarity": 0.5,
+        "persuasion": 0.6499999999999999,
+        "brevity": 0.4,
+        "formality": 0.6000000000000001
+      },
+      "entropy": {
+        "risk_preference": 0.7,
+        "repeat_penalty": 0.8999999999999999,
+        "phrase_penalty": 0.6000000000000001
+      }
+    },
+    "processing_time": 60876.77149900992
+  },
+  "content_file": "file_versions/29cea22af82d/pass_1_content.txt"
+}

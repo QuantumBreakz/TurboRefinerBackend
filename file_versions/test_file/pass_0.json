@@ -1,0 +1,13 @@
+{
+  "file_id": "test_file",
+  "pass_number": 0,
+  "content": "This is a test document for AI refinement. It contains academic language that needs to be humanized and made more natural while maintaining the core meaning and structure.\n",
+  "timestamp": 1761290781.548309,
+  "file_path": "output/test_input.txt",
+  "metrics": null,
+  "metadata": {
+    "job_id": "0960732e-398d-407c-b6d4-8b37d5da1f18",
+    "original": true,
+    "file_size": 172
+  }
+}

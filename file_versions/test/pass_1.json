@@ -1,0 +1,24 @@
+{
+  "file_id": "test",
+  "pass_number": 1,
+  "content": "The document is ready for processing.\n",
+  "timestamp": 1761554054.042929,
+  "file_path": "./output/test_pass1.txt",
+  "metrics": {
+    "changePercent": 0.0,
+    "tensionPercent": 0.0,
+    "scannerRisk": null,
+    "success": true,
+    "localPath": "./output/test_pass1.txt",
+    "docId": null,
+    "originalLength": 40,
+    "finalLength": 38,
+    "processingTime": 8317.37599906046
+  },
+  "metadata": {
+    "job_id": "2eddd097-e0e8-4871-8f4f-1204fa6afe45",
+    "entropy_level": "medium",
+    "heuristics": {},
+    "processing_time": 8317.37599906046
+  }
+}

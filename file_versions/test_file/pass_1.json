@@ -1,0 +1,24 @@
+{
+  "file_id": "test_file",
+  "pass_number": 1,
+  "content": "This document tests AI refinement. It currently uses formal academic language, which should be made more natural and relatable, while preserving the main ideas and structure.\n",
+  "timestamp": 1761290796.720523,
+  "file_path": "./output/test_input_pass1.txt",
+  "metrics": {
+    "changePercent": 0.0,
+    "tensionPercent": 0.0,
+    "scannerRisk": null,
+    "success": true,
+    "localPath": "./output/test_input_pass1.txt",
+    "docId": null,
+    "originalLength": 172,
+    "finalLength": 175,
+    "processingTime": 14861.745750007685
+  },
+  "metadata": {
+    "job_id": "0960732e-398d-407c-b6d4-8b37d5da1f18",
+    "entropy_level": "medium",
+    "heuristics": {},
+    "processing_time": 14861.745750007685
+  }
+}

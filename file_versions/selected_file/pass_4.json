@@ -1,0 +1,53 @@
+{
+  "file_id": "selected_file",
+  "pass_number": 4,
+  "content": "Introduction. to be fair, embracing the Digital Revolution\n\nMoreover, as we navigate the rapidly evolving digital landscape, it's crucial to acknowledge the profound impact of technological advancements on our daily interactions with information. for what it's worth, these advancements foster growth, innovation, and collaboration, while simultaneously introducing challenges, complexities, and uncertainties that demand careful assessment. Understanding the Dual Facets of Technology\n\nFurthermore, it's essential not only to consider the potential benefits of these technological tools but also their possible drawbacks. As technology propels societal progress, we must assess its long-term effects to ensure sustainable and efficient outcomes within the broader context of modern development. Striking a Balance: Human Interaction and Artificial Intelligence\n\nIn addition, when examining the intricate relationship between humans and artificial intelligence, maintaining a balanced perspective is critical. This perspective should take into account efficiency, productivity, and ethical considerations, thereby ensuring our engagement with technology is both beneficial and responsible. Conclusion: Navigating the Digital Terrain with Care\n\nBy contrast, in conclusion. as we traverse the digital terrain, a balanced and thoughtful approach to technology and artificial intelligence is not just desirable, but necessary. Sometimes approach will allow us to harness the rewards of technological progress while mitigating potential risks and ethical dilemmas.\n",
+  "timestamp": 1761671745.627143,
+  "file_path": "./output/tmpfcmd_fao_pass4.txt",
+  "metrics": {
+    "changePercent": 0.0,
+    "tensionPercent": 0.0,
+    "scannerRisk": null,
+    "success": true,
+    "localPath": "./output/tmpfcmd_fao_pass4.txt",
+    "docId": null,
+    "originalLength": 1693,
+    "finalLength": 1560,
+    "processingTime": 32475.085167010548
+  },
+  "metadata": {
+    "job_id": "79426bbb-409e-484b-ac55-5bab0c2c7575",
+    "entropy_level": "medium",
+    "heuristics": {
+      "microstructure_control": true,
+      "macrostructure_analysis": true,
+      "anti_scanner_techniques": true,
+      "refiner_control": 2,
+      "entropy_management": 2,
+      "semantic_tone_tuning": 1,
+      "history_analysis": true,
+      "annotation_mode": false,
+      "humanize_academic": {
+        "enabled": true,
+        "intensity": "medium"
+      },
+      "formatting_safeguards": {
+        "enabled": true,
+        "mode": "strict"
+      },
+      "keywords": [],
+      "strategy_weights": {
+        "clarity": 0.5,
+        "persuasion": 0.6499999999999999,
+        "brevity": 0.4,
+        "formality": 0.6000000000000001
+      },
+      "entropy": {
+        "risk_preference": 0.7,
+        "repeat_penalty": 0.8999999999999999,
+        "phrase_penalty": 0.6000000000000001
+      }
+    },
+    "processing_time": 32475.085167010548
+  }
+}

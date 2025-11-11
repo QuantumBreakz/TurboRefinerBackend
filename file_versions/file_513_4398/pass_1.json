@@ -1,0 +1,36 @@
+{
+  "file_id": "file_513_4398",
+  "pass_number": 1,
+  "content": "This research paper explores how artificial intelligence (AI) can improve written content using advanced natural language processing (NLP) techniques. The current version is written in complex language and a formal academic style, which may be difficult for a wider audience to understand. To make it easier to read, the content should be simplified. Sometimes study includes detailed data analysis and statistical modeling to support the proposed framework.\n",
+  "timestamp": 1761560472.420461,
+  "file_path": "./output/schema_test_document_pass1.txt",
+  "metrics": {
+    "changePercent": 0.0,
+    "tensionPercent": 0.0,
+    "scannerRisk": null,
+    "success": true,
+    "localPath": "./output/schema_test_document_pass1.txt",
+    "docId": null,
+    "originalLength": 513,
+    "finalLength": 459,
+    "processingTime": 12651.972874999046
+  },
+  "metadata": {
+    "job_id": "2d1a8429-7c7b-4c0e-adb3-03c8fea0e180",
+    "entropy_level": "medium",
+    "heuristics": {
+      "schema_flags": {
+        "microstructure_control": false
+      },
+      "humanize_academic": {
+        "enabled": false
+      },
+      "refiner_control": 1,
+      "formatting_safeguards": {
+        "enabled": true,
+        "mode": "strict"
+      }
+    },
+    "processing_time": 12651.972874999046
+  }
+}

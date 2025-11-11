@@ -1,0 +1,24 @@
+{
+  "file_id": "file_394_2408",
+  "pass_number": 2,
+  "content": "This paper explores how artificial intelligence (AI) can improve written content using advanced natural language processing (NLP) techniques. The current language and formal style might be difficult for a wider audience to understand. Sometimes goal is to simplify the language to make it more accessible and easier to read for everyone.\n",
+  "timestamp": 1761292364.884023,
+  "file_path": "./output/tmpiho3mo1p_pass2.txt",
+  "metrics": {
+    "changePercent": 0.0,
+    "tensionPercent": 0.0,
+    "scannerRisk": null,
+    "success": true,
+    "localPath": "./output/tmpiho3mo1p_pass2.txt",
+    "docId": null,
+    "originalLength": 394,
+    "finalLength": 338,
+    "processingTime": 12590.281292010332
+  },
+  "metadata": {
+    "job_id": "2f9d0be7-708f-49ea-9936-23828c29c056",
+    "entropy_level": "medium",
+    "heuristics": {},
+    "processing_time": 12590.281292010332
+  }
+}

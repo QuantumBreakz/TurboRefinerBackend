@@ -1,0 +1,42 @@
+{
+  "file_id": "selected_file",
+  "pass_number": 6,
+  "content": "### Navigating the Digital Landscape , technology reshapes our interaction with information. to be fair, it brings innovation, fosters collaboration, and opens new avenues for growth. Yet, it also presents challenges that need careful consideration. for what it's worth, to create the most of technological advancements, we must evaluate their impact thoughtfully. For example, ### Balancing Human and AI Interaction The relationship between humans and artificial intelligence is complex. AI boosts efficiency and productivity, but ethical concerns and societal effects are significant. Striking a balance is crucial. as we develop and integrate AI, we must aim for solutions that are both sustainable and effective.\n",
+  "timestamp": 1761556064.791931,
+  "file_path": "./output/tmpd9mtk9zg_pass6.txt",
+  "metrics": {
+    "changePercent": 0.0,
+    "tensionPercent": 0.0,
+    "scannerRisk": null,
+    "success": true,
+    "localPath": "./output/tmpd9mtk9zg_pass6.txt",
+    "docId": null,
+    "originalLength": 774,
+    "finalLength": 717,
+    "processingTime": 16502.769042970613
+  },
+  "metadata": {
+    "job_id": "82f83eb8-c082-4103-b47b-0b85603e96b4",
+    "entropy_level": "medium",
+    "heuristics": {
+      "schema_flags": {
+        "macrostructure_analysis": true,
+        "microstructure_control": true,
+        "strategy_insight": true
+      },
+      "humanize_academic": {
+        "enabled": true,
+        "intensity": "medium"
+      },
+      "refiner_control": 2,
+      "entropy_management": 2,
+      "semantic_tone_tuning": 1,
+      "formatting_safeguards": {
+        "enabled": true,
+        "mode": "strict"
+      },
+      "keywords": []
+    },
+    "processing_time": 16502.769042970613
+  }
+}

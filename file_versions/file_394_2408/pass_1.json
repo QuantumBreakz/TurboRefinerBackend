@@ -1,0 +1,46 @@
+{
+  "file_id": "file_394_2408",
+  "pass_number": 1,
+  "content": "to be fair, this research paper explores how artificial intelligence can improve written content using advanced natural language processing techniques. for what it's worth, the original text uses complex terms and formal academic language, which might be difficult for some readers. Sometimes goal is to simplify the content, making it more accessible and easier to understand for a wider audience.\n",
+  "timestamp": 1761496226.191509,
+  "file_path": "./output/test_academic_paper_pass1.txt",
+  "metrics": {
+    "changePercent": 0.0,
+    "tensionPercent": 0.0,
+    "scannerRisk": null,
+    "success": true,
+    "localPath": "./output/test_academic_paper_pass1.txt",
+    "docId": null,
+    "originalLength": 394,
+    "finalLength": 399,
+    "processingTime": 10115.990584017709
+  },
+  "metadata": {
+    "job_id": "51254f59-54e8-47b1-962e-7a55955ddae3",
+    "entropy_level": "medium",
+    "heuristics": {
+      "schema_flags": {
+        "macrostructure_analysis": true,
+        "microstructure_control": true,
+        "strategy_insight": true
+      },
+      "humanize_academic": {
+        "enabled": true,
+        "intensity": "strong"
+      },
+      "refiner_control": 3,
+      "entropy_management": 3,
+      "semantic_tone_tuning": 3,
+      "formatting_safeguards": {
+        "enabled": true,
+        "mode": "strict"
+      },
+      "keywords": [
+        "academic",
+        "research",
+        "AI"
+      ]
+    },
+    "processing_time": 10115.990584017709
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "file_id": "selected_file",
+  "pass_number": 7,
+  "content": "### Navigating the Digital Landscape In today's fast-paced digital world, technology shapes how we access and use information. to be fair, for what it's worth, it offers many benefits, like driving innovation and enabling collaboration. However, it also presents challenges that need careful handling. for what it's worth, as we embrace these advancements, we must be mindful of the complexities and uncertainties they introduce. For example, ### Balancing Benefits and Drawbacks When considering the relationship between humans and artificial intelligence, it's crucial to maintain a balanced view. The conversation should not only focus on efficiency and productivity. ethical considerations and the long-term impact on society are equally important. By adopting a comprehensive approach, we can ensure that technological progress aligns with sustainable and effective development goals.\n",
+  "timestamp": 1761556081.8239481,
+  "file_path": "./output/tmpd9mtk9zg_pass7.txt",
+  "metrics": {
+    "changePercent": 0.0,
+    "tensionPercent": 0.0,
+    "scannerRisk": null,
+    "success": true,
+    "localPath": "./output/tmpd9mtk9zg_pass7.txt",
+    "docId": null,
+    "originalLength": 717,
+    "finalLength": 890,
+    "processingTime": 17026.849791029235
+  },
+  "metadata": {
+    "job_id": "82f83eb8-c082-4103-b47b-0b85603e96b4",
+    "entropy_level": "medium",
+    "heuristics": {
+      "schema_flags": {
+        "macrostructure_analysis": true,
+        "microstructure_control": true,
+        "strategy_insight": true
+      },
+      "humanize_academic": {
+        "enabled": true,
+        "intensity": "medium"
+      },
+      "refiner_control": 2,
+      "entropy_management": 2,
+      "semantic_tone_tuning": 1,
+      "formatting_safeguards": {
+        "enabled": true,
+        "mode": "strict"
+      },
+      "keywords": []
+    },
+    "processing_time": 17026.849791029235
+  }
+}

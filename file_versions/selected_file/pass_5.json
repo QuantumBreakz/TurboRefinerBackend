@@ -1,0 +1,42 @@
+{
+  "file_id": "selected_file",
+  "pass_number": 5,
+  "content": "## to be fair, a Dance\n\nwith Digital: Today's Tech Tango ## Abrupt, swift, unforeseen shifts Abrupt, swift, unforeseen shifts. Today's digital terrain. the pull of tech evolution—deep, momentous. Sometimes daily tango, an unending interaction with data. instruments of the craft, both a blessing and a curse. Potential gains, yet potential hazards. tech advancement: a tale of expansion, novelty, cooperation. Yet, it ushers in trials, intricacies, a hint of unpredictability. A cry for evaluation, detailed, exhaustive. The bond between humans and artificial intelligence: a multifaceted performance. for what it's worth, sometimes balanced perspective required: weighing efficiency, productivity, ethical aspects, and lasting societal impacts. Often, sometimes objective? Sustainable, effective results. By contrast, sometimes modern development framework that backs this. For example, sometimes harmony between swift tech advancement and thoughtful contemplation of its effects. Sometimes, sometimes tango, a fine equilibrium between progress and prudence. Often, sometimes dance we must strive to perfect.\n",
+  "timestamp": 1761659709.9692328,
+  "file_path": "./output/tmppzs3k43m_pass5.txt",
+  "metrics": {
+    "changePercent": 0.0,
+    "tensionPercent": 0.0,
+    "scannerRisk": null,
+    "success": true,
+    "localPath": "./output/tmppzs3k43m_pass5.txt",
+    "docId": null,
+    "originalLength": 887,
+    "finalLength": 1110,
+    "processingTime": 23763.900208999985
+  },
+  "metadata": {
+    "job_id": "c289bfea-9b89-4d2c-a68e-105e59febab2",
+    "entropy_level": "medium",
+    "heuristics": {
+      "schema_flags": {
+        "macrostructure_analysis": true,
+        "microstructure_control": true,
+        "strategy_insight": true
+      },
+      "humanize_academic": {
+        "enabled": true,
+        "intensity": "medium"
+      },
+      "refiner_control": 2,
+      "entropy_management": 2,
+      "semantic_tone_tuning": 1,
+      "formatting_safeguards": {
+        "enabled": true,
+        "mode": "strict"
+      },
+      "keywords": []
+    },
+    "processing_time": 23763.900208999985
+  }
+}
