@@ -17,6 +17,7 @@ from datetime import datetime
 import aiofiles
 
 from fastapi import FastAPI, Request, UploadFile, File, HTTPException, Depends, BackgroundTasks
+from fastapi.responses import Response
 from fastapi.exceptions import RequestValidationError
 from fastapi.routing import APIRouter
 from fastapi.middleware.cors import CORSMiddleware
@@ -423,6 +424,14 @@ async def unhandled_error_handler(request: Request, exc: Exception):
     logger.error(f"Unhandled error: {exc}")
     return create_error_response("Internal server error", 500, "INTERNAL_ERROR")
 
+# Favicon placeholders to avoid serverless crashes or unnecessary 500s
+@app.get("/favicon.ico")
+async def favicon_ico():
+    return Response(status_code=204, media_type="image/x-icon")
+
+@app.get("/favicon.png")
+async def favicon_png():
+    return Response(status_code=204, media_type="image/png")
 # Database init moved to lifespan to avoid import-time crashes in serverless
 
 # Rate limiting middleware
