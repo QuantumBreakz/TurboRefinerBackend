@@ -14,12 +14,20 @@ def _project_root() -> str:
 
 
 def get_log_dir() -> str:
+    # Prefer project logs dir, but fall back to tmp on read-only filesystems (e.g., Vercel serverless)
     logs = os.path.join(_project_root(), 'logs')
     try:
         os.makedirs(logs, exist_ok=True)
+        return logs
     except Exception:
-        pass
-    return logs
+        tmp_dir = os.getenv('TMPDIR') or '/tmp'
+        fallback = os.path.join(tmp_dir, 'logs')
+        try:
+            os.makedirs(fallback, exist_ok=True)
+            return fallback
+        except Exception:
+            # As last resort, return tmp_dir; file handler may still fail and be replaced by console
+            return tmp_dir
 
 
 def get_logger(name: str = 'refiner', level: Optional[int] = None) -> logging.Logger:
@@ -49,16 +57,22 @@ def get_logger(name: str = 'refiner', level: Optional[int] = None) -> logging.Lo
         datefmt='%Y-%m-%dT%H:%M:%SZ'
     )
     
-    # File handler with rotation
-    log_path = os.path.join(get_log_dir(), 'refiner.log')
-    file_handler = logging.handlers.RotatingFileHandler(
-        log_path, 
-        maxBytes=5*1024*1024,  # 5MB (reduced for better management)
-        backupCount=3,  # Keep only 3 backup files
-        encoding='utf-8'
-    )
-    file_handler.setFormatter(formatter)
-    logger.addHandler(file_handler)
+    # File handler with rotation (best-effort; fall back to console on failure)
+    try:
+        log_path = os.path.join(get_log_dir(), 'refiner.log')
+        file_handler = logging.handlers.RotatingFileHandler(
+            log_path,
+            maxBytes=5*1024*1024,  # 5MB (reduced for better management)
+            backupCount=3,  # Keep only 3 backup files
+            encoding='utf-8'
+        )
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
+    except Exception:
+        # Fallback to console logging if file handler cannot be created (read-only FS)
+        console_handler = logging.StreamHandler()
+        console_handler.setFormatter(formatter)
+        logger.addHandler(console_handler)
     
     # Console handler for development
     if os.getenv('DEBUG'):
