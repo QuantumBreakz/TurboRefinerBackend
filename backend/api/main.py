@@ -320,8 +320,16 @@ def handle_api_error(func):
     return func
 
 from backend.core.diff_utils import generate_diff, format_change_for_api, format_statistics_for_api
-from backend.pipeline_service import RefinementPipeline  # ⭐ REAL PIPELINE
-from backend.language_model import OpenAIModel, analytics_store  # ⭐ REAL MODEL
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    # Only for static typing; avoided at runtime to prevent heavy imports on serverless cold start
+    from backend.pipeline_service import RefinementPipeline  # type: ignore
+    from backend.language_model import OpenAIModel  # type: ignore
+else:
+    RefinementPipeline = None  # runtime placeholder
+    OpenAIModel = None  # runtime placeholder
+    analytics_store = None  # runtime placeholder
 from backend.storage import LocalSink, DriveSink  # ⭐ REAL STORAGE
 from backend.prompt_schema import ADVANCED_COMMANDS  # ⭐ REAL SCHEMA
 from backend.core.database import list_jobs as db_list_jobs
@@ -758,23 +766,26 @@ def get_settings() -> Settings:
                 _settings = Settings.load()
     return _settings
 
-def get_model() -> OpenAIModel:
+def get_model() -> "OpenAIModel":
     global _model
     if _model is None:
         with _global_lock:
             if _model is None:  # Double-checked locking
                 settings = get_settings()
-                _model = OpenAIModel(settings.openai_api_key, model=settings.openai_model)
+                # Lazy import to avoid pulling heavy deps at module import time
+                from backend.language_model import OpenAIModel as _OpenAIModel
+                _model = _OpenAIModel(settings.openai_api_key, model=settings.openai_model)
     return _model
 
-def get_pipeline() -> RefinementPipeline:
+def get_pipeline() -> "RefinementPipeline":
     global _pipeline
     if _pipeline is None:
         with _global_lock:
             if _pipeline is None:  # Double-checked locking
                 settings = get_settings()
                 model = get_model()
-                _pipeline = RefinementPipeline(settings, model)
+                from backend.pipeline_service import RefinementPipeline as _RefinementPipeline
+                _pipeline = _RefinementPipeline(settings, model)
     return _pipeline
 
 # Enhanced memory management with persistence
